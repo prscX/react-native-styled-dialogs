@@ -1,0 +1,17 @@
+
+{
+  "name": "react-native-styled-dialogs",
+  "version": "0.0.0",
+  "description": "React Native: Native Styled Dialogs",
+  "main": "RNStyledDialogs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Pranav Raj Singh Chauhan",
+  "license": "Apache 2.0 License",
+  "peerDependencies": {
+  }
+}
