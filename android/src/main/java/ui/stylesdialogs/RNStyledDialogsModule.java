@@ -4,7 +4,11 @@ package ui.stylesdialogs;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -27,7 +31,7 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void Show(final ReadableMap props) {
+  public void Show(final ReadableMap props, final Callback onSelection, final Callback onCancel) {
     this.getCurrentActivity().runOnUiThread(new Runnable() {
       @Override
       public void run() {
@@ -51,6 +55,16 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
 
         String headerTitle = props.getString("headerTitle");
         String headerIcon = props.getString("headerIcon");
+        boolean headerIconAnimation = props.getBoolean("headerIconAnimation");
+
+        boolean dialogAnimation = props.getBoolean("dialogAnimation");
+        boolean darkerOverlay = props.getBoolean("darkerOverlay");
+
+        boolean scrollable = props.getBoolean("scrollable");
+        int maxLines = props.getInt("maxLines");
+
+        boolean cancelable = props.getBoolean("cancelable");
+        boolean autoDismiss = props.getBoolean("autoDismiss");
 
 
         MaterialStyledDialog.Builder dialog = new MaterialStyledDialog.Builder(reactContext.getCurrentActivity())
@@ -60,39 +74,66 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
                 .setNegativeText(negativeText)
                 .setNeutralText(neutralText);
 
+        if (positiveText.length() > 0) {
+          dialog.onPositive(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+              onSelection.invoke("positive");
+            }
+          });
+        }
+        if (neutralText.length() > 0) {
+          dialog.onNeutral(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+              onSelection.invoke("neutral");
+            }
+          });
+        }
+        if (negativeText.length() > 0) {
+          dialog.onNegative(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+              onSelection.invoke("negative");
+            }
+          });
+        }
+
         if (headerBackgroundImage.length() > 0) {
           Resources resources = reactContext.getApplicationContext().getResources();
           headerBackgroundImage = headerBackgroundImage.substring(0, headerBackgroundImage.lastIndexOf("."));
 
           final int resourceId = resources.getIdentifier(headerBackgroundImage, "drawable", reactContext.getPackageName());
 
-          dialog.setHeaderDrawable(resourceId);
+          dialog = dialog.setHeaderDrawable(resourceId);
         }
         if (headerIcon.length() > 0) {
-          dialog.setStyle(Style.HEADER_WITH_ICON);
+          dialog = dialog.setStyle(Style.HEADER_WITH_ICON);
 
           Resources resources = reactContext.getApplicationContext().getResources();
           headerIcon= headerIcon.substring(0, headerIcon.lastIndexOf("."));
 
           final int resourceId = resources.getIdentifier(headerIcon, "drawable", reactContext.getPackageName());
 
-          dialog.setIcon(resourceId);
+          dialog = dialog.setIcon(resourceId);
         }
         if (headerTitle.length() > 0) {
-          dialog.setStyle(Style.HEADER_WITH_TITLE);
+          dialog = dialog.setStyle(Style.HEADER_WITH_TITLE);
 
-          dialog.setTitle(headerTitle);
+          dialog = dialog.setTitle(headerTitle);
         }
         if (headerBackgroundColor.length() > 0) {
-          dialog.setHeaderColorInt(Color.parseColor(headerBackgroundColor));
+          dialog = dialog.setHeaderColorInt(Color.parseColor(headerBackgroundColor));
         }
 
-        dialog.withIconAnimation(false);
-        dialog.withDarkerOverlay(false);
-        dialog.withDialogAnimation(false);
-        dialog.autoDismiss(false);
-        dialog.setCancelable(false);
-        dialog.setScrollable(false, 10);
+        dialog = dialog.withIconAnimation(headerIconAnimation);
+
+        dialog = dialog.withDarkerOverlay(darkerOverlay);
+        dialog = dialog.withDialogAnimation(dialogAnimation);
+
+        dialog = dialog.autoDismiss(autoDismiss);
+        dialog = dialog.setScrollable(scrollable, maxLines);
+        dialog = dialog.setCancelable(cancelable);
 
         dialog.show();
       }

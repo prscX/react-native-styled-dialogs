@@ -13,5 +13,8 @@
   "author": "Pranav Raj Singh Chauhan",
   "license": "Apache 2.0 License",
   "peerDependencies": {
+  },
+  "dependencies": {
+    "react-native-vector-icons": "4.6.0"
   }
 }

@@ -38,7 +38,7 @@ export default class App extends Component<Props> {
             positiveText: "Go",
             // positiveTextColor: "#234333",
             // positiveBackgroundColor: "#000000",
-            // neutralText: "Close",
+            neutralText: "Close",
             neutralTextColor: "#556533",
             // neutralBackgroundColor: "#565677",
             negativeText: "Later",
@@ -48,8 +48,25 @@ export default class App extends Component<Props> {
             headerBackgroundImage: "headerbg.jpg",
             // headerTitle: "Awesome!",
             headerIcon: "headericon.png",
+            headerIconAnimation: true,
             dialogAnimation: true,
-            darkerOverlay: true
+            darkerOverlay: true,
+            scrollable: true,
+            maxLines: 5,
+            cancelable: true,
+            autoDismiss: true,
+            onPositive: () => {
+              console.log("positive clicked");
+            },
+            onNeutral: () => {
+              console.log("neutral clicked");
+            },
+            onNegative: () => {
+              console.log("negative clicked");
+            },
+            onCancellable: () => {
+              console.log("cancellable");
+            }
           });
         }}
       >

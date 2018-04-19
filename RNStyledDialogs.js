@@ -28,9 +28,19 @@ class StyledDialogs extends Component {
     headerBackgroundImage: PropTypes.string,
     headerTitle: PropTypes.string,
     headerIcon: PropTypes.string,
+    headerIconAnimation: PropTypes.bool,
 
     dialogAnimation: PropTypes.bool,
-    darkerOverlay: PropTypes.bool
+    darkerOverlay: PropTypes.bool,
+    scrollable: PropTypes.bool,
+    maxLines: PropTypes.number,
+    cancelable: PropTypes.bool,
+    autoDismiss: PropTypes.bool,
+
+    onPositive: PropTypes.func,
+    onNeutral: PropTypes.func,
+    onNegative: PropTypes.func,
+    onCancellation: PropTypes.func
   };
 
   static defaultProps = {
@@ -57,9 +67,16 @@ class StyledDialogs extends Component {
 
     headerTitle: "",
     headerIcon: "",
+    headerIconAnimation: true,
 
     dialogAnimation: true,
-    darkerOverlay: false
+    darkerOverlay: false,
+
+    scrollable: false,
+    maxLines: 5,
+
+    cancelable: true,
+    autoDismiss: false
   };
 
   static Show(props) {
@@ -95,7 +112,8 @@ class StyledDialogs extends Component {
       props.neutralTextColor = StyledDialogs.defaultProps.neutralTextColor;
     }
     if (props.neutralBackgroundColor === undefined) {
-      props.neutralBackgroundColor = StyledDialogs.defaultProps.neutralBackgroundColor;
+      props.neutralBackgroundColor =
+        StyledDialogs.defaultProps.neutralBackgroundColor;
     }
 
     if (props.negativeText === undefined) {
@@ -124,15 +142,52 @@ class StyledDialogs extends Component {
     if (props.headerIcon === undefined) {
       props.headerIcon = StyledDialogs.defaultProps.headerIcon;
     }
+    if (props.headerIconAnimation === undefined) {
+      props.headerIconAnimation =
+        StyledDialogs.defaultProps.headerIconAnimation;
+    }
 
     if (props.dialogAnimation === undefined) {
-      props.dialogAnimation = StyledDialogs.defaultProps.dialogAnimation
+      props.dialogAnimation = StyledDialogs.defaultProps.dialogAnimation;
     }
     if (props.darkerOverlay === undefined) {
-      props.darkerOverlay = StyledDialogs.defaultProps.darkerOverlay
+      props.darkerOverlay = StyledDialogs.defaultProps.darkerOverlay;
     }
 
-    RNStyledDialogs.Show(props);
+    if (props.scrollable === undefined) {
+      props.scrollable = StyledDialogs.defaultProps.scrollable
+    }
+    if (props.maxLines === undefined) {
+      props.maxLines = StyledDialogs.defaultProps.maxLines
+    }
+
+
+    if (props.cancelable === undefined) {
+      props.cancelable = StyledDialogs.defaultProps.cancelable;
+    }
+    if (props.autoDismiss === undefined) {
+      props.autoDismiss = StyledDialogs.defaultProps.autoDismiss
+    }
+
+
+    RNStyledDialogs.Show(
+      props,
+      selection => {
+        let { onPositive, onNeutral, onNegative } = props;
+
+        if (selection === "positive") {
+          onPositive && onPositive();
+        } else if (selection === "neutral") {
+          onNeutral && onNeutral();
+        } else if (selection === "negative") {
+          onNegative && onNegative();
+        }
+      },
+      () => {
+        let { onCancellable } = props;
+        onCancellable && onCancellable();
+      }
+    );
   }
 }
 

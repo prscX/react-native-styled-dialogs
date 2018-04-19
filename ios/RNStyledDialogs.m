@@ -11,7 +11,23 @@
 }
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
+PMAlertController *alertVC = nil;
+RCTResponseSenderBlock onCancellable = nil;
+NSTimer *timer = NULL;
+
+-(void)onCancellable {
+    if (timer != NULL) {
+        [timer invalidate];
+        timer = NULL;
+    }
+
+    id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
+    [((UINavigationController*) app.window.rootViewController) dismissViewControllerAnimated:YES completion:^{
+        onCancellable(@[]);
+    }];
+}
+
+RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSenderBlock)onSelection onCancellable:(RCTResponseSenderBlock)onCancel) {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *title = [props objectForKey: @"title"];
         NSString *titleColor = [props objectForKey: @"titleColor"];
@@ -37,13 +53,16 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
         NSNumber *darkerOverlay = [props objectForKey: @"darkerOverlay"];
         NSNumber *dialogAnimation = [props objectForKey: @"dialogAnimation"];
         
+        NSNumber *cancelable = [props objectForKey: @"cancelable"];
+        NSNumber *autoDismiss = [props objectForKey: @"autoDismiss"];
+        
         UIImage *hBImage = nil;
 
         if ([headerIcon length] > 0) {
             hBImage = [UIImage imageNamed: headerIcon];
         }
 
-        PMAlertController *alertVC = [[PMAlertController alloc] initWithTitle:title description:description image: nil style:PMAlertControllerStyleAlert];
+        alertVC = [[PMAlertController alloc] initWithTitle:title description:description image: hBImage style:PMAlertControllerStyleAlert];
 
         // Darker Overlay
         if ([darkerOverlay intValue] == 1) {
@@ -64,6 +83,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
         // Neutral Text
         if ([neutralText length] > 0) {
             PMAlertAction *neutral = [[PMAlertAction alloc] initWithTitle:neutralText style:PMAlertActionStyleCancel action:^{
+                onSelection(@[@"neutral"]);
             }];
 
             if ([neutralBackgroundColor length] > 0) {
@@ -78,6 +98,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
         // Negative Text
         if ([negativeText length] > 0) {
             PMAlertAction *negative = [[PMAlertAction alloc] initWithTitle:negativeText style:PMAlertActionStyleCancel action:^{
+                onSelection(@[@"negative"]);
             }];
 
             if ([negativeBackgroundColor length] > 0) {
@@ -92,6 +113,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
         // Positive Text
         if ([positiveText length] > 0) {
             PMAlertAction *positive = [[PMAlertAction alloc] initWithTitle:positiveText style:PMAlertActionStyleDefault action:^{
+                onSelection(@[@"positive"]);
             }];
 
             if ([positiveBackgroundColor length] > 0) {
@@ -100,6 +122,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
             if ([positiveTextColor length] > 0) {
                 [positive setTitleColor: [RNStyledDialogs ColorWithHexString: positiveTextColor] forState: UIControlStateNormal];
             }
+            
             [alertVC addAction: positive];
         }
 
@@ -112,7 +135,24 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
         if ([dialogAnimation intValue] == 0) {
             animated = NO;
         }
+
+        if ([cancelable intValue] == 1) {
+            onCancellable = onCancel;
+            
+            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCancellable)];
+            singleTap.numberOfTapsRequired = 1;
+            
+            [alertVC.alertMaskBackground addGestureRecognizer: singleTap];
+        }
         
+        if ([autoDismiss intValue] == 1) {
+            timer = [NSTimer scheduledTimerWithTimeInterval: 5
+                 target:self
+               selector: @selector(onCancellable)
+               userInfo: nil
+                repeats:YES];
+        }
+
         id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
         [((UINavigationController*) app.window.rootViewController) presentViewController:alertVC animated:animated completion:nil];
     });
