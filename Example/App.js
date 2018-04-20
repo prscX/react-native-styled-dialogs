@@ -54,7 +54,7 @@ export default class App extends Component<Props> {
             scrollable: true,
             maxLines: 5,
             cancelable: true,
-            autoDismiss: true,
+            autoDismiss: false,
             onPositive: () => {
               console.log("positive clicked");
             },
