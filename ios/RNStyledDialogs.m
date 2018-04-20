@@ -13,12 +13,12 @@ RCT_EXPORT_MODULE()
 
 PMAlertController *alertVC = nil;
 RCTResponseSenderBlock onCancellable = nil;
-NSTimer *timer = NULL;
+NSTimer *_timer = NULL;
 
 -(void)onCancellable {
-    if (timer != NULL) {
-        [timer invalidate];
-        timer = NULL;
+    if (_timer != NULL) {
+        [_timer invalidate];
+        _timer = NULL;
     }
 
     id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
@@ -146,7 +146,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         }
         
         if ([autoDismiss intValue] == 1) {
-            timer = [NSTimer scheduledTimerWithTimeInterval: 5
+            _timer = [NSTimer scheduledTimerWithTimeInterval: 5
                  target:self
                selector: @selector(onCancellable)
                userInfo: nil
