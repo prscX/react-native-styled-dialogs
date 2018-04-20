@@ -79,8 +79,8 @@ React Native Library that shows a beautiful and customizable designed dialog wit
 
 > **Note:** Since we are using native libraries, we have not found a solution in order to render RN Images in production, therefore please copy all your image assets in platform specific folders:
 
-- **Android:** Please copy your image resource drawables in app resource drawable folder
-- **iOS:** Please copy your image resource in app resources folder
+- **Android:** Please copy your image assets in app resource drawable folder
+- **iOS:** Please copy your image assets in app resources folder
 
 > Please refer example application for the image usage.
 
