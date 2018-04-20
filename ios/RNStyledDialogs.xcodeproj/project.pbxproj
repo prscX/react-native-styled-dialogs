@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9556695B67698286AF6CE730 /* Pods_RNStyledDialogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNStyledDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		819DBCA3EBE394C5AFE0DA1A /* Pods-RNStyledDialogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStyledDialogs.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNStyledDialogs/Pods-RNStyledDialogs.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNStyledDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNStyledDialogs.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNStyledDialogs.m; sourceTree = "<group>"; };
+		C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNStyledDialogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9556695B67698286AF6CE730 /* Pods_RNStyledDialogs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +55,7 @@
 		2764C04D770B530B0C973558 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
