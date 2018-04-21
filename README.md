@@ -102,14 +102,14 @@ RNStyledDialogs.Show({
 | `negativeText`       | `string`     |         | Specify positive negative button text
 | `headerBackgroundColor`       | `string - HEX COLOR`     |   `#FFFFFF`      | Specify header background color
 | `headerIcon`       | `string`     |         | Specify header icon
-| `dialogAnimation`       | `bool`     |    true     | Specify dialog animation (enable/disable)
-| `darkerOverlay`       | `bool`     |    false     | Specify dialog overlay (enable/disable)
+| `dialogAnimation`       | `bool`     |    `true`     | Specify dialog animation (enable/disable)
+| `darkerOverlay`       | `bool`     |    `false`     | Specify dialog overlay (enable/disable)
 | `cancelable`       | `bool`     |         | Specify cancelable of dialog behaviour (enable/disable)
-| `autoDismiss`       | `bool`     |    false     | Specify dialog should get automatically dismiss or not (enable/disable)
+| `autoDismiss`       | `bool`     |    `false`     | Specify dialog should get automatically dismiss or not (enable/disable)
 | `onPositive`       | `func`     |         | Specify positive click callback function
 | `onNeutral`       | `bool`     |         | Specify netural click callback function
 | `onNegative`       | `bool`     |         | Specify negative click callback function
-| `onCancellation`       | `bool`     |   true      | Specify cancellation callback function
+| `onCancellation`       | `bool`     |   `true`      | Specify cancellation callback function
 
 
 
@@ -119,9 +119,9 @@ RNStyledDialogs.Show({
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `headerBackgroundImage`       | `string`     |         | Specify header background image
 | `headerTitle`       | `string`     |         | Specify header title
-| `headerIconAnimation`       | `bool`     |    true     | Specify header icon animation (enable/disable)
-| `scrollable`       | `bool`     |    false     | Specify description scrollable (enable/disable)
-| `maxLines`       | `number`     |    5     | Specify description max number of lines
+| `headerIconAnimation`       | `bool`     |    `true`     | Specify header icon animation (enable/disable)
+| `scrollable`       | `bool`     |    `false`     | Specify description scrollable (enable/disable)
+| `maxLines`       | `number`     |    `5`     | Specify description max number of lines
 
 
 - **Props: iOS**
