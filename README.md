@@ -54,7 +54,7 @@ allprojects {
 
   - Add [PMAlertController](https://github.com/pmusolino/PMAlertController) in your app Embedded Binaries & Linked Frameworks and Libraries. Please follow below video in order to achieve the same:
 
-  
+    <img src="./assets/setup.gif" />
 
   - Now build your iOS app through Xcode
 
