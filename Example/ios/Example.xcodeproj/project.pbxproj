@@ -41,8 +41,8 @@
 		CE03FC6B2087416F00553890 /* headerbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE03FC432087416F00553890 /* headerbg.jpg */; };
 		CE03FC6C2087416F00553890 /* headericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE03FC6A2087416F00553890 /* headericon.png */; };
 		CE1A332E2088B77600F902C7 /* libRNStyledDialogs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7E20F220837C5E0050AC71 /* libRNStyledDialogs.a */; };
-		CE346309208B013100282AA0 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE346304208B012300282AA0 /* PMAlertController.framework */; };
-		CE34630A208B013100282AA0 /* PMAlertController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE346304208B012300282AA0 /* PMAlertController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE346362208B052F00282AA0 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE34635D208B052500282AA0 /* PMAlertController.framework */; };
+		CE346363208B052F00282AA0 /* PMAlertController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE34635D208B052500282AA0 /* PMAlertController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,30 +319,30 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
-		CE346303208B012300282AA0 /* PBXContainerItemProxy */ = {
+		CE34635C208B052500282AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CE3462FD208B012300282AA0 /* Pods.xcodeproj */;
+			containerPortal = CE346356208B052500282AA0 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 632D3C4792BBEFE6454C2E89CFEBEC15;
 			remoteInfo = PMAlertController;
 		};
-		CE346305208B012300282AA0 /* PBXContainerItemProxy */ = {
+		CE34635E208B052500282AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CE3462FD208B012300282AA0 /* Pods.xcodeproj */;
+			containerPortal = CE346356208B052500282AA0 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2BD4CCC0ACEB48852ED734F6B6668335;
 			remoteInfo = "PMAlertController-PMAlertController";
 		};
-		CE346307208B012300282AA0 /* PBXContainerItemProxy */ = {
+		CE346360208B052500282AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CE3462FD208B012300282AA0 /* Pods.xcodeproj */;
+			containerPortal = CE346356208B052500282AA0 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1512D6C6B3731C14CB12D5859F9EC0DC;
 			remoteInfo = "Pods-RNStyledDialogs";
 		};
-		CE34630B208B013100282AA0 /* PBXContainerItemProxy */ = {
+		CE346364208B052F00282AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CE3462FD208B012300282AA0 /* Pods.xcodeproj */;
+			containerPortal = CE346356208B052500282AA0 /* Pods.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 99183593E3C04F0C7720EF0DA4A0159B;
 			remoteInfo = PMAlertController;
@@ -363,7 +363,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CE34630A208B013100282AA0 /* PMAlertController.framework in Embed Frameworks */,
+				CE346363208B052F00282AA0 /* PMAlertController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +401,7 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		CE03FC432087416F00553890 /* headerbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerbg.jpg; sourceTree = "<group>"; };
 		CE03FC6A2087416F00553890 /* headericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headericon.png; sourceTree = "<group>"; };
-		CE3462FD208B012300282AA0 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = "../../node_modules/react-native-styled-dialogs/ios/Pods/Pods.xcodeproj"; sourceTree = "<group>"; };
+		CE346356208B052500282AA0 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = "../../node_modules/react-native-styled-dialogs/ios/Pods/Pods.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,7 +420,7 @@
 				CE1A332E2088B77600F902C7 /* libRNStyledDialogs.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
-				CE346309208B013100282AA0 /* PMAlertController.framework in Frameworks */,
+				CE346362208B052F00282AA0 /* PMAlertController.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -606,7 +606,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				CE3462D6208B010400282AA0 /* RNStyledDialogs */,
+				CE346355208B051D00282AA0 /* RNStyledDialogs */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -669,20 +669,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE3462D6208B010400282AA0 /* RNStyledDialogs */ = {
+		CE346355208B051D00282AA0 /* RNStyledDialogs */ = {
 			isa = PBXGroup;
 			children = (
-				CE3462FD208B012300282AA0 /* Pods.xcodeproj */,
+				CE346356208B052500282AA0 /* Pods.xcodeproj */,
 			);
 			path = RNStyledDialogs;
 			sourceTree = "<group>";
 		};
-		CE3462FE208B012300282AA0 /* Products */ = {
+		CE346357208B052500282AA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE346304208B012300282AA0 /* PMAlertController.framework */,
-				CE346306208B012300282AA0 /* PMAlertController.bundle */,
-				CE346308208B012300282AA0 /* Pods_RNStyledDialogs.framework */,
+				CE34635D208B052500282AA0 /* PMAlertController.framework */,
+				CE34635F208B052500282AA0 /* PMAlertController.bundle */,
+				CE346361208B052500282AA0 /* Pods_RNStyledDialogs.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -746,7 +746,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE34630C208B013100282AA0 /* PBXTargetDependency */,
+				CE346365208B052F00282AA0 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = "Hello World";
@@ -826,8 +826,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CE3462FE208B012300282AA0 /* Products */;
-					ProjectRef = CE3462FD208B012300282AA0 /* Pods.xcodeproj */;
+					ProductGroup = CE346357208B052500282AA0 /* Products */;
+					ProjectRef = CE346356208B052500282AA0 /* Pods.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1152,25 +1152,25 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CE346304208B012300282AA0 /* PMAlertController.framework */ = {
+		CE34635D208B052500282AA0 /* PMAlertController.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PMAlertController.framework;
-			remoteRef = CE346303208B012300282AA0 /* PBXContainerItemProxy */;
+			remoteRef = CE34635C208B052500282AA0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CE346306208B012300282AA0 /* PMAlertController.bundle */ = {
+		CE34635F208B052500282AA0 /* PMAlertController.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = PMAlertController.bundle;
-			remoteRef = CE346305208B012300282AA0 /* PBXContainerItemProxy */;
+			remoteRef = CE34635E208B052500282AA0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CE346308208B012300282AA0 /* Pods_RNStyledDialogs.framework */ = {
+		CE346361208B052500282AA0 /* Pods_RNStyledDialogs.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pods_RNStyledDialogs.framework;
-			remoteRef = CE346307208B012300282AA0 /* PBXContainerItemProxy */;
+			remoteRef = CE346360208B052500282AA0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CE7E20F220837C5E0050AC71 /* libRNStyledDialogs.a */ = {
@@ -1297,10 +1297,10 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* Example-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
-		CE34630C208B013100282AA0 /* PBXTargetDependency */ = {
+		CE346365208B052F00282AA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PMAlertController;
-			targetProxy = CE34630B208B013100282AA0 /* PBXContainerItemProxy */;
+			targetProxy = CE346364208B052F00282AA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

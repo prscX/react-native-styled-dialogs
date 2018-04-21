@@ -79,6 +79,8 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
             @Override
             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
               onSelection.invoke("positive");
+
+              dialog.dismiss();
             }
           });
         }
@@ -87,6 +89,8 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
             @Override
             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
               onSelection.invoke("neutral");
+
+              dialog.dismiss();
             }
           });
         }
@@ -95,6 +99,8 @@ public class RNStyledDialogsModule extends ReactContextBaseJavaModule {
             @Override
             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
               onSelection.invoke("negative");
+
+              dialog.dismiss();
             }
           });
         }
