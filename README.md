@@ -66,6 +66,29 @@ allprojects {
 
     <img src="./assets/swift-error.gif" />
 
+
+## Usage
+
+```javascript
+import RNStyledDialogs from 'react-native-styled-dialogs';
+
+RNStyledDialogs.Show({
+  title: "Awesome!",
+  description:
+    "Glad to you like RNStyledDialogs! If you are up for it, we would like to appreciate you receiving us.",
+  positiveText: "Go",
+  neutralText: "Close",
+  negativeText: "Later",
+  onPositive: () => { },
+  onNeutral: () => { },
+  onNegative: () => { },
+  onCancellable: () => { }
+});
+
+```
+
+
+
 ## Props
 
 - **Props: Generic**
@@ -77,16 +100,16 @@ allprojects {
 | `positiveText`       | `string`     |         | Specify positive button text
 | `neutralText`       | `string`     |         | Specify neutral button text
 | `negativeText`       | `string`     |         | Specify positive negative button text
-| `headerBackgroundColor`       | `string - HEX COLOR`     |         | Specify header background color
+| `headerBackgroundColor`       | `string - HEX COLOR`     |   #FFFFFF      | Specify header background color
 | `headerIcon`       | `string`     |         | Specify header icon
-| `dialogAnimation`       | `bool`     |         | Specify dialog animation (enable/disable)
-| `darkerOverlay`       | `bool`     |         | Specify dialog overlay (enable/disable)
+| `dialogAnimation`       | `bool`     |    true     | Specify dialog animation (enable/disable)
+| `darkerOverlay`       | `bool`     |    false     | Specify dialog overlay (enable/disable)
 | `cancelable`       | `bool`     |         | Specify cancelable of dialog behaviour (enable/disable)
-| `autoDismiss`       | `bool`     |         | Specify dialog should get automatically dismiss or not (enable/disable)
+| `autoDismiss`       | `bool`     |    false     | Specify dialog should get automatically dismiss or not (enable/disable)
 | `onPositive`       | `func`     |         | Specify positive click callback function
 | `onNeutral`       | `bool`     |         | Specify netural click callback function
 | `onNegative`       | `bool`     |         | Specify negative click callback function
-| `onCancellation`       | `bool`     |         | Specify cancellation callback function
+| `onCancellation`       | `bool`     |   true      | Specify cancellation callback function
 
 
 
@@ -96,9 +119,9 @@ allprojects {
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `headerBackgroundImage`       | `string`     |         | Specify header background image
 | `headerTitle`       | `string`     |         | Specify header title
-| `headerIconAnimation`       | `bool`     |         | Specify header icon animation (enable/disable)
-| `scrollable`       | `bool`     |         | Specify description scrollable (enable/disable)
-| `maxLines`       | `number`     |         | Specify description max number of lines
+| `headerIconAnimation`       | `bool`     |    true     | Specify header icon animation (enable/disable)
+| `scrollable`       | `bool`     |    false     | Specify description scrollable (enable/disable)
+| `maxLines`       | `number`     |    5     | Specify description max number of lines
 
 
 - **Props: iOS**
@@ -106,11 +129,11 @@ allprojects {
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `positiveTextColor`      | `string - HEX COLOR`     |         | Specify positive button text color
-| `positiveBackgroundColor`      | `string - HEX COLOR`     |         | Specify positive button background color
+| `positiveBackgroundColor`      | `string - HEX COLOR`     |    #FFFFFF     | Specify positive button background color
 | `neutralTextColor`      | `string - HEX COLOR`     |         | Specify neutral button text color
-| `neutralBackgroundColor`      | `string - HEX COLOR`     |         | Specify neutral button background color
+| `neutralBackgroundColor`      | `string - HEX COLOR`     |     #FFFFFF    | Specify neutral button background color
 | `negativeTextColor`      | `string - HEX COLOR`     |         | Specify negative button text color
-| `negativeBackgroundColor`      | `string - HEX COLOR`     |         | Specify negative button background color
+| `negativeBackgroundColor`      | `string - HEX COLOR`     |     #FFFFFF    | Specify negative button background color
 
 
 ## Providing Images
