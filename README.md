@@ -100,7 +100,7 @@ RNStyledDialogs.Show({
 | `positiveText`       | `string`     |         | Specify positive button text
 | `neutralText`       | `string`     |         | Specify neutral button text
 | `negativeText`       | `string`     |         | Specify positive negative button text
-| `headerBackgroundColor`       | `string - HEX COLOR`     |   #FFFFFF      | Specify header background color
+| `headerBackgroundColor`       | `string - HEX COLOR`     |   `#FFFFFF`      | Specify header background color
 | `headerIcon`       | `string`     |         | Specify header icon
 | `dialogAnimation`       | `bool`     |    true     | Specify dialog animation (enable/disable)
 | `darkerOverlay`       | `bool`     |    false     | Specify dialog overlay (enable/disable)
@@ -129,11 +129,11 @@ RNStyledDialogs.Show({
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `positiveTextColor`      | `string - HEX COLOR`     |         | Specify positive button text color
-| `positiveBackgroundColor`      | `string - HEX COLOR`     |    #FFFFFF     | Specify positive button background color
+| `positiveBackgroundColor`      | `string - HEX COLOR`     |    `#FFFFFF`     | Specify positive button background color
 | `neutralTextColor`      | `string - HEX COLOR`     |         | Specify neutral button text color
-| `neutralBackgroundColor`      | `string - HEX COLOR`     |     #FFFFFF    | Specify neutral button background color
+| `neutralBackgroundColor`      | `string - HEX COLOR`     |     `#FFFFFF`    | Specify neutral button background color
 | `negativeTextColor`      | `string - HEX COLOR`     |         | Specify negative button text color
-| `negativeBackgroundColor`      | `string - HEX COLOR`     |     #FFFFFF    | Specify negative button background color
+| `negativeBackgroundColor`      | `string - HEX COLOR`     |     `#FFFFFF`    | Specify negative button background color
 
 
 ## Providing Images
