@@ -7,9 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9556695B67698286AF6CE730 /* Pods_RNStyledDialogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNStyledDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */; };
+		CE1E26FE208A0CC300B643B7 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1E26F9208A0CBE00B643B7 /* PMAlertController.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE1E26F8208A0CBE00B643B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 632D3C4792BBEFE6454C2E89CFEBEC15;
+			remoteInfo = PMAlertController;
+		};
+		CE1E26FA208A0CBE00B643B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2BD4CCC0ACEB48852ED734F6B6668335;
+			remoteInfo = "PMAlertController-PMAlertController";
+		};
+		CE1E26FC208A0CBE00B643B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1512D6C6B3731C14CB12D5859F9EC0DC;
+			remoteInfo = "Pods-RNStyledDialogs";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -29,7 +53,7 @@
 		819DBCA3EBE394C5AFE0DA1A /* Pods-RNStyledDialogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStyledDialogs.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNStyledDialogs/Pods-RNStyledDialogs.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNStyledDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNStyledDialogs.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNStyledDialogs.m; sourceTree = "<group>"; };
-		C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNStyledDialogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9556695B67698286AF6CE730 /* Pods_RNStyledDialogs.framework in Frameworks */,
+				CE1E26FE208A0CC300B643B7 /* PMAlertController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +79,7 @@
 		2764C04D770B530B0C973558 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2493A649CECE559CB2AEEB4 /* Pods_RNStyledDialogs.framework */,
+				CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +102,16 @@
 				55A0F6F15039A4E7FEAA44F3 /* Pods */,
 				2764C04D770B530B0C973558 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		CE1E26F3208A0CBE00B643B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE1E26F9208A0CBE00B643B7 /* PMAlertController.framework */,
+				CE1E26FB208A0CBE00B643B7 /* PMAlertController.bundle */,
+				CE1E26FD208A0CBE00B643B7 /* Pods_RNStyledDialogs.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,12 +160,42 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE1E26F3208A0CBE00B643B7 /* Products */;
+					ProjectRef = CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNStyledDialogs */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE1E26F9208A0CBE00B643B7 /* PMAlertController.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PMAlertController.framework;
+			remoteRef = CE1E26F8208A0CBE00B643B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE1E26FB208A0CBE00B643B7 /* PMAlertController.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMAlertController.bundle;
+			remoteRef = CE1E26FA208A0CBE00B643B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE1E26FD208A0CBE00B643B7 /* Pods_RNStyledDialogs.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_RNStyledDialogs.framework;
+			remoteRef = CE1E26FC208A0CBE00B643B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		6E4D6D13A74DBAF7D82F5E4F /* [CP] Check Pods Manifest.lock */ = {

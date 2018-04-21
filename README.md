@@ -28,6 +28,44 @@ React Native Library that shows a beautiful and customizable designed dialog wit
 `$ react-native link react-native-styled-dialogs`
 
 
+- **Android**
+
+> Library id supported SDK 25 > above
+
+Please add below snippet into your app `build.gradle`
+
+```javascript
+
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+}
+```
+
+
+- **iOS**
+
+  - Run Command: cd ../node_modules/react-native-styled-dialogs/ios && pod install. If it has error => try pod repo update then pod install
+
+  - Add [PMAlertController](https://github.com/pmusolino/PMAlertController) in your app Embedded Binaries & Linked Frameworks and Libraries. Please follow below video in order to achieve the same:
+
+  
+
+  - Now build your iOS app through Xcode
+
+  - If you receive below error, please check video below in order to resolve the same:
+
+    <img src="./assets/swift-error.png" />
+
+    **SOLUTION**
+
+    <img src="./assets/swift-error.gif" />
+
 ## Props
 
 - **Props: Generic**
