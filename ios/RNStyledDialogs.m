@@ -84,7 +84,14 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
             // add the gradient layer as a sublayer of you image view
             [alertVC.alertMaskBackground.layer addSublayer: layer];
         }
-        
+
+        if ([input intValue] == 1) {
+            [alertVC addTextField:^(UITextField * _Nullable textField) {
+                inputField = textField;
+                textField.placeholder = placeholder;
+            }];
+        }
+
         // Neutral Text
         if ([neutralText length] > 0) {
             PMAlertAction *neutral = [[PMAlertAction alloc] initWithTitle:neutralText style:PMAlertActionStyleCancel action:^{
@@ -133,13 +140,6 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
             }
             
             [alertVC addAction: positive];
-        }
-
-        if ([input intValue] == 1) {
-            [alertVC addTextField:^(UITextField * _Nullable textField) {
-                inputField = textField;
-                textField.placeholder = placeholder;
-            }];
         }
         
         if ([headerBackgroundColor length] > 0) {
