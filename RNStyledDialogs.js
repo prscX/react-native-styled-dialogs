@@ -40,7 +40,10 @@ class StyledDialogs extends Component {
     onPositive: PropTypes.func,
     onNeutral: PropTypes.func,
     onNegative: PropTypes.func,
-    onCancellation: PropTypes.func
+    onCancellation: PropTypes.func,
+
+    input: PropTypes.bool,
+    placeholder: PropTypes.string
   };
 
   static defaultProps = {
@@ -76,7 +79,10 @@ class StyledDialogs extends Component {
     maxLines: 5,
 
     cancelable: true,
-    autoDismiss: false
+    autoDismiss: false,
+
+    input: false,
+    placeholder: ''
   };
 
   static Show(props) {
@@ -169,14 +175,20 @@ class StyledDialogs extends Component {
       props.autoDismiss = StyledDialogs.defaultProps.autoDismiss
     }
 
+    if (props.input === undefined) {
+      props.input = StyledDialogs.defaultProps.input;
+    }
+    if (props.placeholder === undefined) {
+      props.placeholder = StyledDialogs.defaultProps.placeholder;
+    }
 
     RNStyledDialogs.Show(
       props,
-      selection => {
+      (selection, input) => {
         let { onPositive, onNeutral, onNegative } = props;
 
         if (selection === "positive") {
-          onPositive && onPositive();
+          onPositive && onPositive(input);
         } else if (selection === "neutral") {
           onNeutral && onNeutral();
         } else if (selection === "negative") {

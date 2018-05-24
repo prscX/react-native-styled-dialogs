@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* RNStyledDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */; };
 		CE1E26FE208A0CC300B643B7 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1E26F9208A0CBE00B643B7 /* PMAlertController.framework */; };
+		DB9338F87636FCC7A7C6A9EE /* Pods_RNStyledDialogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F513D038E8094F1F7A61D0C7 /* Pods_RNStyledDialogs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		B3E7B5881CC2AC0600A0062D /* RNStyledDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNStyledDialogs.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNStyledDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNStyledDialogs.m; sourceTree = "<group>"; };
 		CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		F513D038E8094F1F7A61D0C7 /* Pods_RNStyledDialogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNStyledDialogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1E26FE208A0CC300B643B7 /* PMAlertController.framework in Frameworks */,
+				DB9338F87636FCC7A7C6A9EE /* Pods_RNStyledDialogs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1E26F2208A0CBE00B643B7 /* Pods.xcodeproj */,
+				F513D038E8094F1F7A61D0C7 /* Pods_RNStyledDialogs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

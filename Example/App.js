@@ -55,8 +55,10 @@ export default class App extends Component<Props> {
             maxLines: 5,
             cancelable: true,
             autoDismiss: false,
-            onPositive: () => {
-              console.log("positive clicked");
+            input: true,
+            placeholder: 'Please enter name',
+            onPositive: (input) => {
+              console.log("positive clicked, " + input);
             },
             onNeutral: () => {
               console.log("neutral clicked");

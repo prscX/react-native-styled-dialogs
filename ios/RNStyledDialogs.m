@@ -56,6 +56,11 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         NSNumber *cancelable = [props objectForKey: @"cancelable"];
         NSNumber *autoDismiss = [props objectForKey: @"autoDismiss"];
         
+        NSNumber *input = [props objectForKey: @"input"];
+        NSString *placeholder = [props objectForKey: @"placeholder"];
+
+        __block UITextField *inputField;
+        
         UIImage *hBImage = nil;
 
         if ([headerIcon length] > 0) {
@@ -113,7 +118,11 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         // Positive Text
         if ([positiveText length] > 0) {
             PMAlertAction *positive = [[PMAlertAction alloc] initWithTitle:positiveText style:PMAlertActionStyleDefault action:^{
-                onSelection(@[@"positive"]);
+                if (inputField == nil) {
+                    onSelection(@[@"positive"]);
+                } else {
+                    onSelection(@[@"positive", inputField.text]);
+                }
             }];
 
             if ([positiveBackgroundColor length] > 0) {
@@ -126,6 +135,13 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
             [alertVC addAction: positive];
         }
 
+        if ([input intValue] == 1) {
+            [alertVC addTextField:^(UITextField * _Nullable textField) {
+                inputField = textField;
+                textField.placeholder = placeholder;
+            }];
+        }
+        
         if ([headerBackgroundColor length] > 0) {
             UIView *headerView = alertVC.headerView;
             headerView.backgroundColor = [RNStyledDialogs ColorWithHexString: headerBackgroundColor];
@@ -153,6 +169,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
                 repeats:YES];
         }
 
+        
         id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
         [((UINavigationController*) app.window.rootViewController) presentViewController:alertVC animated:animated completion:nil];
     });
