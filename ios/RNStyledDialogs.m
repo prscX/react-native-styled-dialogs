@@ -30,10 +30,8 @@ NSTimer *_timer = NULL;
 RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSenderBlock)onSelection onCancellable:(RCTResponseSenderBlock)onCancel) {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *title = [props objectForKey: @"title"];
-        NSString *titleColor = [props objectForKey: @"titleColor"];
-
+   
         NSString *description = [props objectForKey: @"description"];
-        NSString *descriptionColor = [props objectForKey: @"descriptionColor"];
         
         NSString *positiveText = [props objectForKey: @"positiveText"];
         NSString *positiveTextColor = [props objectForKey: @"positiveTextColor"];
@@ -58,6 +56,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         
         NSNumber *input = [props objectForKey: @"input"];
         NSString *placeholder = [props objectForKey: @"placeholder"];
+        UIKeyboardType keyboardType = [RCTConvert UIKeyboardType:props[@"keyboardType"]];
 
         __block UITextField *inputField;
         
@@ -89,6 +88,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
             [alertVC addTextField:^(UITextField * _Nullable textField) {
                 inputField = textField;
                 textField.placeholder = placeholder;
+                textField.keyboardType = keyboardType;
             }];
         }
 
