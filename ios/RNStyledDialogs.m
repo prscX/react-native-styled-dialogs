@@ -30,8 +30,10 @@ NSTimer *_timer = NULL;
 RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSenderBlock)onSelection onCancellable:(RCTResponseSenderBlock)onCancel) {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *title = [props objectForKey: @"title"];
+        NSString *titleColor = [props objectForKey: @"titleColor"];
    
         NSString *description = [props objectForKey: @"description"];
+        NSString *descriptionColor = [props objectForKey: @"descriptionColor"];
         
         NSString *positiveText = [props objectForKey: @"positiveText"];
         NSString *positiveTextColor = [props objectForKey: @"positiveTextColor"];
