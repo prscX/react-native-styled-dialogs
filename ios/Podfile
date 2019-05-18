@@ -7,7 +7,7 @@ target 'RNStyledDialogs' do
 
   # Pods for RNStyledDialogs
 
-  pod 'PMAlertController', '~> 3.5.0'
+  pod 'PMAlertController', :git => 'https://github.com/prscX/PMAlertController', :branch => 'swift-version-fix'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
