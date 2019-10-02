@@ -27,10 +27,48 @@ This library shows a beautiful and customizable designed dialog with header.
 
 ## 📖 Getting started
 
-`$ npm install react-native-styled-dialogs --save`
+`$ yarn add react-native-styled-dialogs`
+
+
+## **RN60 >= RNSD V1 >**
+
+> RN60 above please use `react-native-styled-dialogs` V1 and above
+
+- **iOS**
+
+> **iOS Prerequisite:** Please make sure `CocoaPods` is installed on your system
+
+	- Add the following to your `Podfile` -> `ios/Podfile` and run pod update:
+
+
+```
+  use_native_modules!
+
+  pod 'RNStyledDialogs', :path => '../node_modules/react-native-styled-dialogs/ios'
+
+  use_frameworks!
+
+  pod 'PMAlertController', :git => 'https://github.com/prscX/PMAlertController', :branch => 'swift-version-fix'
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name.include?('PMAlertController')
+        target.build_configurations.each do |config|
+          config.build_settings['SWIFT_VERSION'] = '4.2'
+        end
+      end
+    end
+  end
+```
+
+- **Android**
+
+
+## **RN60 < RNSD V1 <**
+
+> RN60 below please use `react-native-styled-dialogsw` V.0.*
 
 `$ react-native link react-native-styled-dialogs`
-
 
 - **Android**
 

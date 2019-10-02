@@ -22,11 +22,11 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return <ImageBackground
-        source={background}
-        style={[styles.container]}
-        width={1000}
-        height={1000}
-      >
+      source={background}
+      style={[styles.container]}
+      width={1000}
+      height={1000}
+    >
       <TouchableOpacity
         onPress={() => {
           RNStyledDialogs.Show({

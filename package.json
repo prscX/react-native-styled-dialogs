@@ -1,12 +1,12 @@
 
 {
   "name": "react-native-styled-dialogs",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "React Native: Native Styled Dialogs",
   "main": "RNStyledDialogs.js",
+  "homepage": "https://github.com/prscX/react-native-styled-dialogs.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node ../pod-installer/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "react-native"
@@ -16,7 +16,6 @@
   "peerDependencies": {
   },
   "dependencies": {
-    "pod-installer": "0.0.0"
   },
   "devDependencies": {
     "prettier-pack": "0.0.8"
