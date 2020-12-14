@@ -58,6 +58,8 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         
         NSNumber *input = [props objectForKey: @"input"];
         NSString *placeholder = [props objectForKey: @"placeholder"];
+        NSAttributedString *str = [[NSAttributedString alloc] initWithString:placeholder attributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }];
+
         UIKeyboardType keyboardType = [RCTConvert UIKeyboardType:props[@"keyboardType"]];
 
         __block UITextField *inputField;
@@ -91,6 +93,8 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
                 inputField = textField;
                 textField.placeholder = placeholder;
                 textField.keyboardType = keyboardType;
+                textField.attributedPlaceholder = str;
+                [textField setTextColor:[UIColor blackColor]]; 
             }];
         }
 
