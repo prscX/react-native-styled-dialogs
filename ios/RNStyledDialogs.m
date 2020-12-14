@@ -93,7 +93,7 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
                 inputField = textField;
                 textField.placeholder = placeholder;
                 textField.keyboardType = keyboardType;
-                textField.attributedPlaceholder=str;
+                textField.attributedPlaceholder = str;
                 [textField setTextColor:[UIColor blackColor]]; 
             }];
         }
