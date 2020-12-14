@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-styled-dialogs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native: Native Styled Dialogs",
   "main": "RNStyledDialogs.js",
   "homepage": "https://github.com/prscX/react-native-styled-dialogs.git",
@@ -18,6 +18,6 @@
   "dependencies": {
   },
   "devDependencies": {
-    "prettier-pack": "0.0.8"
+    "prettier-pack": "0.0.9"
   }
 }
