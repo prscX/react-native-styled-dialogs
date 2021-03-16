@@ -43,7 +43,8 @@ class StyledDialogs extends Component {
     onCancellation: PropTypes.func,
 
     input: PropTypes.bool,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    inputValue: PropTypes.string
   };
 
   static defaultProps = {
@@ -82,7 +83,8 @@ class StyledDialogs extends Component {
     autoDismiss: false,
 
     input: false,
-    placeholder: ''
+    placeholder: '',
+    inputValue: ''
   };
 
   static Show(props) {
@@ -180,6 +182,9 @@ class StyledDialogs extends Component {
     }
     if (props.placeholder === undefined) {
       props.placeholder = StyledDialogs.defaultProps.placeholder;
+    }
+    if(props.inputValue === undefined){
+      props.inputValue = StyledDialogs.defaultProps.inputValue
     }
 
     RNStyledDialogs.Show(
