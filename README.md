@@ -29,10 +29,8 @@ This library shows a beautiful and customizable designed dialog with header.
 
 `$ yarn add react-native-styled-dialogs`
 
+> This library is supported React Native 60 and above
 
-## **RN60 >= RNSD V1 >**
-
-> RN60 above please use `react-native-styled-dialogs` V1 and above
 
 - **iOS**
 
@@ -42,63 +40,34 @@ This library shows a beautiful and customizable designed dialog with header.
 
 
 ```
-  use_native_modules!
-
-  pod 'RNStyledDialogs', :path => '../node_modules/react-native-styled-dialogs/ios'
-
-  use_frameworks!
+  use_frameworks! :linkage => :static
 
   pod 'PMAlertController', :git => 'https://github.com/prscX/PMAlertController', :branch => 'swift-version-fix'
 
-  post_install do |installer|
-    installer.pods_project.targets.each do |target|
-      if target.name.include?('PMAlertController')
-        target.build_configurations.each do |config|
-          config.build_settings['SWIFT_VERSION'] = '4.2'
+  # Follow [Flipper iOS Setup Guidelines](https://fbflipper.com/docs/getting-started/ios-native)
+  # This is required because iOSPhotoEditor is implemented using Swift and we have to use use_frameworks! in Podfile
+  $static_framework = ['FlipperKit', 'Flipper', 'Flipper-Folly',
+    'CocoaAsyncSocket', 'ComponentKit', 'Flipper-DoubleConversion',
+    'Flipper-Glog', 'Flipper-PeerTalk', 'Flipper-RSocket', 'Yoga', 'YogaKit',
+    'CocoaLibEvent', 'OpenSSL-Universal', 'boost-for-react-native']
+  
+  pre_install do |installer|
+    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+    installer.pod_targets.each do |pod|
+        if $static_framework.include?(pod.name)
+          def pod.build_type;
+            Pod::BuildType.static_library
+          end
         end
       end
-    end
   end
+  
 ```
 
-- **Android**
+- Please make sure [**Flipper iOS Setup Guidelines**](https://fbflipper.com/docs/getting-started/ios-native/) steps are added to Podfile, since iOSPhotoEditor is implemented using Swift and we have to use use_frameworks! in Podfile
 
-
-## **RN60 < RNSD V1 <**
-
-> RN60 below please use `react-native-styled-dialogsw` V.0.*
-
-`$ react-native link react-native-styled-dialogs`
 
 - **Android**
-
-> Library id supported SDK 25 > above
-
-Please add below snippet into your app `build.gradle`
-
-```javascript
-
-allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-        maven {
-            url "https://jitpack.io"
-        }
-    }
-}
-```
-
-
-- **iOS**
-
-  - After `react-native link react-native-styled-dialogs`, please verify `node_modules/react-native-styled-dialogs/ios/` contains `Pods` folder. If does not exist please execute `pod install` command on `node_modules/react-native-styled-dialogs/ios/`, if any error => try `pod repo update` then `pod install`
-  - After verification, open your project and create a folder 'RNStyledDialogs' under Libraries.
-  - Drag `node_modules/react-native-styled-dialogs/ios/pods/Pods.xcodeproject` into RNStyledDialogs, as well as the RNStyledDialogs.xcodeproject if it does not exist.
-  - Add the `PMAlertController.framework` into your project's `Embedded Binaries` and make sure the framework is also in linked libraries.
-  - Go to your project's `Build Settings -> Framework Search Path` and set `$(inherited) to recursive`.
-
-    <img src="./assets/setup.gif" />
 
 
 ## 💻 Usage
