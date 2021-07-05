@@ -90,13 +90,13 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSen
         }
 
         if ([input intValue] == 1) {
-            [alertVC addTextField:^(UITextField * _Nullable textField) {
+            [alertVC addTextFieldWithTextField:nil :^(UITextField * _Nullable textField) {
                 inputField = textField;
                 textField.placeholder = placeholder;
                 textField.text=inputValue;
                 textField.keyboardType = keyboardType;
                 textField.attributedPlaceholder = str;
-                [textField setTextColor:[UIColor blackColor]]; 
+                [textField setTextColor:[UIColor blackColor]];
             }];
         }
 
